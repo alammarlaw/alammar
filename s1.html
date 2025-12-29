@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الخدمات القانونية المتعلقة بالماليات</title>
+ 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0b2b44; /* كحلي */
+      --navy-2: #072233;
+      --gold: #c9a04b;
+      --gold-2: #b5862f;
+      --muted: #f5f5f7;
+      --text: #0f1720;
+      --card-bg: #ffffff;
+    }
+
+    /* Reset & Global */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; font-family: 'Tajawal', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: var(--muted); color: var(--text); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    a { color: inherit; text-decoration: none; }
+    body { user-select: none; -webkit-user-drag: none; } /* حماية بسيطة */
+
+    /* Animations */
+    .fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
+    .slide-up { animation: slideUp 1s ease forwards; opacity: 0; transform: translateY(20px); }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Header */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: linear-gradient(180deg, rgba(11,43,68,0.95), rgba(11,43,68,0.85));
+      color: #ffffff; backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { width: 56px; height: 80px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--navy); }
+    .brand h1 { margin: 0; font-size: 18px; letter-spacing: 0.4px; }
+
+    nav.main-nav { display: flex; gap: 18px; align-items: center; }
+    nav.main-nav a { color: #fff; padding: 8px 12px; border-radius: 8px; font-weight: 500; transition: background 0.3s; }
+    nav.main-nav a:hover { background: rgba(255,255,255,0.05); }
+
+    .header-actions { display: flex; gap: 12px; align-items: center; }
+    .menu-btn { background: transparent; border: 1px solid rgba(255,255,255,0.12); padding: 8px 12px; border-radius: 8px; color: #fff; cursor: pointer; transition: all 0.3s; }
+    .menu-btn:hover { background: rgba(255,255,255,0.08); }
+
+/* Footer */
+footer {
+  background: var(--navy-2);
+  color: #eaf0f5;
+  padding: 25px 20px;
+  font-family: var(--font);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* العناوين */
+footer h4 {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 18px;
+}
+
+/* الفقرات */
+footer p.muted {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* قائمة الأيقونات */
+footer ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* يسمح بالالتفاف على الجوال */
+}
+
+footer ul li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  transition: transform 0.3s ease;
+}
+
+footer ul li a:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Responsive للجوال ===== */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* عمود واحد على الجوال */
+    gap: 20px;
+  }
+  footer ul {
+    justify-content: start; /* محاذاة الأيقونات للجانب الأيسر */
+    gap: 12px;
+  }
+  footer p.muted {
+    font-size: 13px;
+  }
+  footer h4 {
+    font-size: 16px;
+  }
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* العناوين */
+footer h4 {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 18px;
+}
+
+/* الفقرات */
+footer p.muted {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* قائمة الأيقونات */
+footer ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* يسمح بالالتفاف على الجوال */
+}
+
+footer ul li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  transition: transform 0.3s ease;
+}
+
+footer ul li a:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Responsive للجوال ===== */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* عمود واحد على الجوال */
+    gap: 20px;
+  }
+  footer ul {
+    justify-content: start; /* محاذاة الأيقونات للجانب الأيسر */
+    gap: 12px;
+  }
+  footer p.muted {
+    font-size: 13px;
+  }
+  footer h4 {
+    font-size: 16px;
+  }
+  .brand h1 {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 190px;
+  }
+}
+
+    /* Floating WhatsApp */
+    .whatsapp { position: fixed; bottom: 22px; left: 22px; z-index: 1200; display: flex; align-items: center; gap: 12px; background: linear-gradient(90deg, var(--gold), var(--gold-2)); color: var(--navy); padding: 12px 14px; border-radius: 999px; box-shadow: 0 8px 24px rgba(11,43,68,0.15); font-weight: 700; transition: transform 0.3s, left 0.4s ease, right 0.4s ease; }
+    .whatsapp:hover { transform: scale(1.05); }
+    html[dir="ltr"] .whatsapp {
+      left: auto;
+      right: 22px;
+    }
+
+    /* Side menu */
+    .sidepanel { position: fixed; top: 0; bottom: 0; right: -420px; width: 380px; background: #fff; box-shadow: -40px 0 80px rgba(11,43,68,0.12); z-index: 1300; padding: 22px; transition: right 0.35s ease; border-left: 1px solid rgba(11,43,68,0.06); }
+    .sidepanel.open { right: 0; }
+    .sidepanel .close { display: block; margin-left: auto; border: none; background: transparent; font-size: 22px; cursor: pointer; }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero h2 { font-size: 30px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: repeat(2,1fr); }
+      .header-inner { height: 68px; }
+      nav.main-nav { display: none; }
+    }
+    @media (max-width: 480px){
+      .hero { padding-top: 90px; }
+      .hero-inner { padding: 44px 18px; }
+      .hero h2 { font-size: 24px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .whatsapp { padding: 10px 12px; }
+    }
+
+     .logo img {
+  transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.08);
+}
+
+/* Language toggle */
+.lang-switch { background: transparent; border: 1px solid rgba(255,255,255,0.12); color:#fff; padding: 6px 10px; border-radius:8px; cursor:pointer; font-family: 'Tajawal', sans-serif; }
+
+  </style>
+</head>
+<body>
+
+<!-- القائمة الجانبية -->
+<aside id="sidebar" style="
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
+  background: linear-gradient(180deg, #072233 0%, #0b2b44 100%);
+  color: #fff;
+  z-index: 1400;
+  box-shadow: -6px 0 40px rgba(0,0,0,0.3);
+  padding: 30px 24px;
+  transition: right 0.4s ease;
+  overflow-y: auto;
+  border-left: 1px solid rgba(255,255,255,0.05);
+  font-family: 'Tajawal', sans-serif;
+">
+  <button id="closeSidebar" style="
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    float: left;
+  ">✖</button>
+  <h2 style="margin-top: 40px; margin-bottom: 24px; color: #c9a04b; font-size: 26px;" data-key="sidebar_title">القائمة</h2>
+
+  <nav>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+      <li style="margin-bottom: 16px;">
+        <a href="index.html" class="menu-link" data-key="nav_home">الرئيسية</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a href="index.html#values" class="menu-link" data-key="nav_values">قيمنا</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a href="index.html#services" class="menu-link" data-key="nav_services">خدماتنا</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a href="index.html#structure" class="menu-link" data-key="nav_structure">هيكلنا الاداري</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a href="index.html#partners" class="menu-link" data-key="nav_partners">شركاء النجاح</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a  href="index.html#ceo" class="menu-link" data-key="nav_ceo">رسالة الرئيس</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div style="margin-top:40px; border-top:1px dashed rgba(255,255,255,0.2); padding-top:16px;">
+    <h4 style="margin-bottom:12px;" data-key="sidebar_contact">تواصل سريع</h4>
+    <a href="tel:+966550602128" style="color:#fff; display:block; margin-bottom:6px;" data-key="sidebar_phone">📞 اتصال مباشر</a>
+    <a href="mailto:info@alammarlaw.com" style="color:#fff; display:block;" data-key="sidebar_email">✉ البريد الإلكتروني</a>
+  </div>
+</aside>
+
+<style>
+  /* حركة عند مرور المؤشر */
+  .menu-link {
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  .menu-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #c9a04b, #b5862f);
+    transition: width 0.3s ease;
+  }
+
+  .menu-link:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateX(-6px);
+  }
+
+  .menu-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  /* حركة الزر */
+  #menuToggle:hover {
+    transform: scale(1.08);
+    background: linear-gradient(90deg, #b5862f, #c9a04b);
+  }
+
+  /* حركة فتح الصفحة */
+  body {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+  }
+
+  body.fade-in {
+    opacity: 1;
+  }
+  
+</style>
+
+<script>
+  // إظهار القائمة
+  // تأثير الدخول السلس للصفحة
+  window.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar');
+    const openBtn = document.getElementById('menuToggle');
+    const closeBtn = document.getElementById('closeSidebar');
+
+    if (openBtn) openBtn.addEventListener('click', () => { sidebar.style.right = '0'; });
+    if (closeBtn) closeBtn.addEventListener('click', () => { sidebar.style.right = '-100%'; });
+
+    document.body.classList.add('fade-in');
+  });
+
+  // انتقال سلس بين الصفحات
+  document.querySelectorAll('a.menu-link').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      sidebar.style.right = '-100%'; // إغلاق القائمة
+      
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      e.preventDefault();
+      document.body.classList.remove('fade-in');
+      setTimeout(() => {
+        window.location.href = href;
+      }, 300);
+    }
+  });
+});
+
+</script>
+
+
+
+ <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand" aria-label="brand">
+          <div class="logo" aria-hidden="true">
+            <a href="index.html" aria-label="home">
+              <img src="a4.png" alt="شعار الشركة" style="width:40px;height:40px;object-fit:contain;">
+            </a>
+          </div>
+          <div>
+            <h1 data-key="company_name">شركة عبدالاله العمار و شركاؤه</h1>
+            <div style="font-size:12px;opacity:0.9;" data-key="company_tag">للمحاماة و الاستشارات القانونية</div>
+          </div>
+        </div>
+        <div class="header-actions">
+        <button id="langToggle" class="lang-switch">EN</button>
+        <button id="menuToggle" style="background: transparent; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 0 8px;">☰</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  
+      
+
+  
+
+ 
+
+  
+
+
+<!-- قسم الخدمات المالية -->
+<section id="financial-services" style="padding:100px 0;background:#f8f9fb;">
+  <div class="container">
+    <h2 style="text-align:center;color:#234057;font-size:32px;margin-bottom:60px;font-weight:800;" data-key="s1_main_title">
+      الخدمات القانونية المتعلقة بالماليات
+    </h2>
+
+    <div class="services-grid">
+      <div class="service-box">
+        <div class="num">٠١</div>
+        <h3 data-key="s1_box1_title">الزكاة و الضريبة</h3>
+        <p data-key="s1_box1_text">المنازعة أمام لجان الفصل في المنازعات الضريبية، والاستشارات القانونية في التفاصيل الضريبية.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="num">٠٢</div>
+        <h3 data-key="s1_box2_title">الأوراق المالية</h3>
+        <p data-key="s1_box2_text">المنازعة القضائية في الشيكات أو السندات لأمر أو الكمبيالات.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="num">٠٣</div>
+        <h3 data-key="s1_box3_title">السوق المالية</h3>
+        <p data-key="s1_box3_text">تسجيل الشركة بالمعايير المتوازنة مع سوق الأسهم السعودي، بغرض الإدراج.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="num">٠٤</div>
+        <h3 data-key="s1_box4_title">الوصايا و الأوقاف</h3>
+        <p data-key="s1_box4_text">توثيق الوصايا والأوقاف وتسجيلها، والمرافعة في النزاعات الخاصة بثبوتها أو نفيها.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="num">٠٥</div>
+        <h3 data-key="s1_box5_title">الإفلاس</h3>
+        <p data-key="s1_box5_text">في حال تعرضت الشركة للإفلاس وترغب في إتمام الإجراءات القضائية، هنا يأتي دور الشركة لعمل إجراءات الإفلاس.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="num">٠٦</div>
+        <h3 data-key="s1_box6_title">إعادة تنظيم الوضع المالي</h3>
+        <p data-key="s1_box6_text">في حال تم رفع قضايا على الشركة وكان هناك دائنين للشركة، يتم عمل إعادة التنظيم لتعاود نشاطها التجاري.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 40px;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  .service-box {
+    background: #fff;
+    padding: 40px 28px 36px;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(11,43,68,0.06);
+    transition: all 0.4s ease;
+  }
+
+  .service-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(11,43,68,0.12);
+  }
+
+  .service-box .num {
+    background: #c9a04b;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+
+  .service-box h3 {
+    color: #0b2b44;
+    font-size: 22px;
+    margin: 8px 0 12px;
+  }
+
+  .service-box p {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 320px;
+  }
+
+  @media (max-width: 991px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .service-box {
+      padding: 36px 22px;
+    }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4 style="margin:0 0 8px;color:var(--gold)" data-key="footer_title1">مكتب المحاماة</h4>
+         <p class="muted" style="color:#ffffff;" data-key="footer_address">العنوان: الرياض - طريق الملك سلمان - برج الرميح<br>هاتف: 2128 060 55 966+<br>البريد:  info@alammarlaw.com</p>
+      </div>
+    
+      <div>
+  <h4 style="margin:0 0 8px;color:var(--gold)" data-key="footer_title2">روابط سريعة</h4>
+  <ul style="padding:0;margin:0;list-style:none;display:flex;gap:10px;align-items:center;">
+    <li>
+      <a href="https://x.com/alammar_law1" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);">
+        <!-- شعار X -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor">
+          <path d="M389.2 48H473L305.1 232.2L503 464H372.6L257.7 324.2L126.9 464H43.8L221.1 267.5L27 48H161.5L264.3 175.3L389.2 48Z"/>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.snapchat.com/add/alammar_law" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);">
+        <!-- شعار Snapchat -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
+          <path d="M224 0C100.3 0 0 100.3 0 224c0 92.6 59.6 171.5 142.1 202.3-2.1-18.8-4.8-46.8 1.2-67.1 5.3-18.7 34.1-118.3 34.1-118.3s-8.7-17.4-8.7-43.1c0-40.4 23.4-70.6 52.5-70.6 24.8 0 36.7 18.6 36.7 40.9 0 25-15.9 62.2-24.1 96.9-6.8 28.9 14.4 52.5 42.6 52.5 51.1 0 85.4-54.1 85.4-132.1 0-68.9-49.4-117.4-120.1-117.4-81.9 0-129.9 61.5-129.9 125.2 0 24.7 9.5 51.1 21.4 65.6 2.4 2.9 2.7 5.5 2 8.4-2.2 9.2-7.2 29.4-8.1 33.6-1.2 5.2-4.1 6.3-9.5 3.8-35.5-16.5-57.8-68.3-57.8-110.2 0-89.5 65.1-171.8 188.1-171.8 99.3 0 176.3 70.9 176.3 165.9 0 98.6-62.3 178.2-148.7 178.2-29 0-56.3-15.1-65.6-32.7l-17.8 67.9c-6.5 24.6-24.2 55.4-36.1 74 27.1 8.4 55.8 13 85.6 13 123.7 0 224-100.3 224-224S347.7 0 224 0z"/>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.tiktok.com/@alammar_law" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);">
+        <!-- شعار TikTok -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
+          <path d="M448 209.9a210.1 210.1 0 0 1-122.3-39.4v141.2a200.1 200.1 0 1 1-200-200.1 195.2 195.2 0 0 1 29.2 2.2v82.3a118.6 118.6 0 1 0 83.3 113.5V0h81.3a129.6 129.6 0 0 0 128.5 129.7Z"/>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/@alammar-law" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);">
+        <!-- شعار YouTube -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="16" height="16" fill="currentColor">
+          <path d="M549.7 124.1c-6.3-23.7-24.8-42.4-48.4-48.7C458.8 64 288 64 288 64s-170.8 0-213.3 11.4c-23.6 6.3-42.1 25-48.4 48.7C16 166.6 16 256 16 256s0 89.4 10.3 131.9c6.3 23.7 24.8 42.4 48.4 48.7C117.2 448 288 448 288 448s170.8 0 213.3-11.4c23.6-6.3 42.1-25 48.4-48.7C560 345.4 560 256 560 256s0-89.4-10.3-131.9zM232 336V176l142 80-142 80z"/>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/966550602128" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20.5 3.5H3.5v17l4-1 1.5.5L20.5 3.5z" fill="currentColor"/></svg>
+    <span data-key="whatsapp_cta">تواصل عبر واتساب</span>
+  </a>
+
+ 
+
+  <script>
+    // Language Switcher
+    const translations = {
+      en: {
+        company_name: "Abdullah Al Ammar & Partners",
+        company_tag: "Law Firm & Legal Consultations",
+        sidebar_title: "Menu",
+        nav_home: "Home",
+        nav_values: "Our Values",
+        nav_services: "Our Services",
+        nav_structure: "Our Structure",
+        nav_partners: "Success Partners",
+        nav_ceo: "CEO's Message",
+        sidebar_contact: "Quick Contact",
+        sidebar_phone: "📞 Direct Call",
+        sidebar_email: "✉ Email",
+        s1_main_title: "Legal Services Related to Finance",
+        s1_box1_title: "Zakat and Tax",
+        s1_box1_text: "Disputes before tax dispute resolution committees, and legal advice on tax details.",
+        s1_box2_title: "Securities",
+        s1_box2_text: "Judicial disputes regarding checks, promissory notes, or bills of exchange.",
+        s1_box3_title: "Capital Market",
+        s1_box3_text: "Registering the company with standards aligned with the Saudi stock market, for the purpose of listing.",
+        s1_box4_title: "Wills and Endowments",
+        s1_box4_text: "Documenting and registering wills and endowments, and litigating disputes regarding their validity.",
+        s1_box5_title: "Bankruptcy",
+        s1_box5_text: "If a company faces bankruptcy and wishes to complete judicial procedures, our firm handles the bankruptcy proceedings.",
+        s1_box6_title: "Financial Reorganization",
+        s1_box6_text: "If lawsuits are filed against the company and there are creditors, reorganization is carried out for the company to resume its business activities.",
+        footer_title1: "Law Office",
+        footer_address: "Address: Riyadh - King Salman Road - Al-Rumaih Tower<br>Phone: +966 55 060 2128<br>Email: info@alammarlaw.com",
+        footer_title2: "Quick Links",
+        whatsapp_cta: "Contact via WhatsApp",
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const langToggle = document.getElementById('langToggle');
+        let currentLang = 'ar'; // Default language
+
+        // Store original Arabic text
+        const originalTexts = {};
+        document.querySelectorAll('[data-key]').forEach(el => {
+            originalTexts[el.getAttribute('data-key')] = el.innerHTML;
+        });
+
+        function applyTranslations(lang) {
+            currentLang = lang;
+            if (lang === 'en') {
+                document.documentElement.lang = 'en';
+                document.documentElement.dir = 'ltr';
+                langToggle.textContent = 'AR';
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    if (translations.en[key]) {
+                        el.innerHTML = translations.en[key];
+                    }
+                });
+            } else { // 'ar'
+                document.documentElement.lang = 'ar';
+                document.documentElement.dir = 'rtl';
+                langToggle.textContent = 'EN';
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    if (originalTexts[key]) {
+                        el.innerHTML = originalTexts[key];
+                    }
+                });
+            }
+        }
+
+        langToggle.addEventListener('click', () => {
+            const newLang = currentLang === 'ar' ? 'en' : 'ar';
+            applyTranslations(newLang);
+        });
+    });
+
+    // Simple appear animation on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.transform='translateY(0)';
+          entry.target.style.opacity='1';
+          observer.unobserve(entry.target);
+        }
+      })
+    },{threshold:0.12});
+
+    document.querySelectorAll('.card, .ceo, .vision, .why-item, .value').forEach(el=>{
+      el.style.transform='translateY(14px)';el.style.opacity='0';el.style.transition='all .6s cubic-bezier(.2,.9,.2,1)';
+      observer.observe(el);
+    });
+
+  </script>
+</body>
+</html>

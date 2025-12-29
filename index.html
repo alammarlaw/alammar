@@ -1,0 +1,1820 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>شركة عبدالاله العمار للمحاماة</title>
+  <meta name="description" content="شركة عبدالإله العمار للمحاماة مكتب قانوني سعودي يقدم خدمات المحاماة والاستشارات القانونية للشركات والأفراد، مع خبرة في صياغة العقود والتقاضي وحل النزاعات." />
+  <link rel="icon"  href="h1.png">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0b2b44; /* كحلي */
+      --navy-2: #072233;
+      --gold: #c9a04b;
+      --gold-2: #b5862f;
+      --muted: #f5f5f7;
+      --text: #0f1720;
+      --card-bg: #ffffff;
+    }
+
+    /* Reset & Global */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; font-family: 'Tajawal', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: var(--muted); color: var(--text); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    a { color: inherit; text-decoration: none; }
+    body { user-select: none; -webkit-user-drag: none; } /* حماية بسيطة */
+
+    /* Animations */
+    .fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
+    .slide-up { animation: slideUp 1s ease forwards; opacity: 0; transform: translateY(20px); }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Header */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: linear-gradient(180deg, rgba(11,43,68,0.95), rgba(11,43,68,0.85));
+      color: #ffffff; backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 74px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { width: 56px; height: 80px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--navy); }
+    .brand h1 { margin: 0; font-size: 18px; letter-spacing: 0.4px; }
+
+    nav.main-nav { display: flex; gap: 18px; align-items: center; }
+    nav.main-nav a { color: #fff; padding: 8px 12px; border-radius: 8px; font-weight: 500; transition: background 0.3s; }
+    nav.main-nav a:hover { background: rgba(255,255,255,0.05); }
+
+    .header-actions { display: flex; gap: 12px; align-items: center; }
+    .menu-btn { background: transparent; border: 1px solid rgba(255,255,255,0.12); padding: 8px 12px; border-radius: 8px; color: #fff; cursor: pointer; transition: all 0.3s; }
+    .menu-btn:hover { background: rgba(255,255,255,0.08); }
+
+    .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg, 
+    rgba(7,34,51,0.85), 
+    rgba(7,34,51,0.7)
+  ); /* تدرج لوني يعطي عمق وتباين للنصوص */
+  z-index: 1;
+}
+
+/* ===== للجوال ===== */
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(
+      180deg, 
+      rgba(7,34,51,0.9), 
+      rgba(7,34,51,0.8)
+    );
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-overlay {
+    background: linear-gradient(
+      180deg, 
+      rgba(7,34,51,0.95), 
+      rgba(7,34,51,0.85)
+    );
+  }
+}
+
+
+    /* Sections */
+    section { padding: 64px 20px; background: transparent; }
+    .card { background: var(--card-bg); border-radius: 14px; box-shadow: 0 6px 20px rgba(11,43,68,0.06); padding: 28px; }
+
+    /* Responsive grid for About / Vision */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .vision .icon { width: 84px; height: 84px; border-radius: 12px; background: linear-gradient(180deg, var(--gold-2), var(--gold)); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--navy); font-size: 28px; }
+
+    /* Why us */
+    .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+    .why-item { background: transparent; padding: 18px; border-radius: 12px; text-align: center; transition: transform 0.3s; }
+    .why-item:hover { transform: translateY(-6px); }
+    .why-item .ico { font-size: 30px; margin-bottom: 10px; color: var(--gold); }
+    
+
+
+    /* Values */
+    .values { display: flex; gap: 18px; flex-wrap: wrap; }
+    .value { flex: 1; min-width: 200px; background: linear-gradient(180deg,#fff,#fbfbfd); padding: 18px; border-radius: 12px; text-align: center; transition: transform 0.3s; }
+    .value:hover { transform: scale(1.03); }
+
+
+/* ======= CEO Message Section ======= */
+
+
+.ceo { background: var(--navy); color: #fff; 
+  padding: 48px; 
+  border-radius: 14px; 
+  display: flex; 
+  gap: 24px; 
+  align-items: center; } 
+  .ceo img 
+  { width: 160px; 
+    height: 160px; 
+    border-radius: 12px; 
+    object-fit: cover;
+     border: 6px solid rgba(255,255,255,0.06); 
+    }
+
+/* ======= Responsive for Mobile ======= */
+@media (max-width: 768px) {
+  .ceo {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .ceo img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .ceo div {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ceo {
+    padding: 25px 15px;
+    gap: 15px;
+  }
+
+  .ceo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .ceo h3 {
+    font-size: 22px;
+  }
+
+  .ceo p.muted {
+    font-size: 14px;
+  }
+
+  .ceo div:last-child {
+    font-size: 16px;
+  }
+}
+
+
+    /* Footer */
+footer {
+  background: var(--navy-2);
+  color: #eaf0f5;
+  padding: 25px 20px;
+  font-family: var(--font);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* العناوين */
+footer h4 {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 18px;
+}
+
+/* الفقرات */
+footer p.muted {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* قائمة الأيقونات */
+footer ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* يسمح بالالتفاف على الجوال */
+}
+
+footer ul li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  transition: transform 0.3s ease;
+}
+
+footer ul li a:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Responsive للجوال ===== */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* عمود واحد على الجوال */
+    gap: 20px;
+  }
+  footer ul {
+    justify-content: start; /* محاذاة الأيقونات للجانب الأيسر */
+    gap: 12px;
+  }
+  footer p.muted {
+    font-size: 13px;
+  }
+  footer h4 {
+    font-size: 16px;
+  }
+  .brand h1 {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 190px;
+  }
+}
+
+    /* Floating WhatsApp */
+    .whatsapp { position: fixed; bottom: 22px; left: 22px; z-index: 1200; display: flex; align-items: center; gap: 12px; background: linear-gradient(90deg, var(--gold), var(--gold-2)); color: var(--navy); padding: 12px 14px; border-radius: 999px; box-shadow: 0 8px 24px rgba(11,43,68,0.15); font-weight: 700; transition: transform 0.3s; }
+    .whatsapp:hover { transform: scale(1.05); }
+    html[dir="ltr"] .whatsapp {
+      left: auto;
+      right: 22px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero h2 { font-size: 30px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: repeat(2,1fr); }
+      .header-inner { height: 68px; }
+      nav.main-nav { display: none; }
+    }
+    @media (max-width: 480px){
+      .hero { padding-top: 90px; }
+      .hero-inner { padding: 44px 18px; }
+      .hero h2 { font-size: 24px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .whatsapp { padding: 10px 12px; }
+    }
+
+    /* Small helpers */
+    .muted { color: rgba(15,23,32,0.65); }
+    .section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .section-title h3 { margin: 0; }
+
+    .logo img {
+  transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.08);
+}
+
+
+/* Language toggle */
+    .lang-switch { background: transparent; border: 1px solid rgba(255,255,255,0.12); color:#fff; padding: 6px 10px; border-radius:8px; cursor:pointer; }
+    .menu-btn { background: transparent; border: 1px solid rgba(255,255,255,0.12); padding: 8px 12px; border-radius: 8px; color: #fff; cursor: pointer; transition: all 0.3s; }
+    .menu-btn:hover { background: rgba(255,255,255,0.08); }
+
+
+
+    /* شكل البوكسين بشكل عادي */
+.vision-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* تنسيق داخلي للبوكس الثاني */
+.vision-flex {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* ————— نسخة الجوال ————— */
+@media (max-width: 600px) {
+  .vision-wrapper {
+    grid-template-columns: 1fr 1fr !important; 
+    gap: 12px;
+  }
+
+  .vision-wrapper .card {
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+  }
+
+  .vision-flex h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .vision-flex p,
+  .vision p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* يمنع النص من النزول تحت بعض */
+  .vision-flex {
+    flex-direction: column;
+  }
+} 
+/* Stats Section */
+.stats-white{
+  background:#fff;
+  padding: 40px 20px 100px;
+}
+section {
+  scroll-margin-top: 100px; /* يجعل القسم يظهر أسفل الهيدر عند التمرير */
+}
+
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:30px;
+  max-width:1200px;
+  margin:auto;
+}
+@media (max-width: 980px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .stats-grid { grid-template-columns: 1fr; } }
+
+.stat-card{background:#fff;border-radius:20px;padding:35px 25px;text-align:center;box-shadow:0 18px 50px rgba(11,43,68,.08);transition:.3s ease;}
+.stat-card:hover{transform:translateY(-6px);box-shadow:0 30px 70px rgba(11,43,68,.14);}
+.stat-card h3{margin-bottom:30px;color:var(--navy);font-size:20px;}
+.stat-number{font-size:75px;font-weight:800;color: #666;}
+.stat-number1{font-size:75px;font-weight:800;color: #072233;}
+.double-chart{display:flex;justify-content:space-between;gap:20px;}
+.circle-wrap{position:relative;width:120px;height:120px;margin:auto;}
+.circle-wrap canvas{width:100%!important;height:100%!important;}
+.circle-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:var(--navy);}
+.circle-label{margin-top:8px;font-size:14px;color:#666;}
+.circle-wrap.big{width:260px;height:260px;}
+.circle-wrap.big .circle-text{font-size:44px;color:var(--gold);}
+
+/* Horizontal Percent Indicators */
+.horizontal-percent-container{max-width:600px;margin:40px auto;display:flex;flex-direction:column;gap:16px;}
+.percent-row{display:flex;align-items:center;gap:12px;}
+.percent-code{font-weight:700;color:var(--navy);width:40px;}
+.percent-bar{flex:1;height:16px;background:#e9edf1;border-radius:20px;overflow:hidden;position:relative;}
+.percent-fill{height:100%;width:0;border-radius:20px;background:linear-gradient(90deg,#0b2b44,#caa24d);transition:width 1s;}
+.percent-value{font-weight:700;font-size:13px;color:#6f7a83;min-width:40px;text-align:right;}
+
+/* Global Chart */
+.global-chart{max-width:520px;margin:60px auto 0;text-align:center;}
+.global-chart h2{margin-bottom:30px;color:var(--navy);font-size:26px;}
+
+
+
+
+    
+
+
+
+    
+
+
+  </style>
+</head>
+<body>
+
+<!-- القائمة الجانبية -->
+<aside id="sidebar" style="
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
+  background: linear-gradient(180deg, #072233 0%, #0b2b44 100%);
+  color: #fff;
+  z-index: 1400;
+  box-shadow: -6px 0 40px rgba(0,0,0,0.3);
+  padding: 30px 24px;
+  transition: right 0.4s ease;
+  overflow-y: auto;
+  border-left: 1px solid rgba(255,255,255,0.05);
+  font-family: 'Tajawal', sans-serif;
+">
+  <button id="closeSidebar" style="
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    float: left;
+  ">✖</button>
+  <h2 style="margin-top: 40px; margin-bottom: 24px; color: #c9a04b; font-size: 26px;" data-key="sidebar_title">القائمة</h2>
+
+  <nav>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+      <li style="margin-bottom: 16px;">
+        <a href="index.html" class="menu-link" data-key="nav_home">الرئيسية</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a href="#values" class="menu-link" data-key="nav_values">قيمنا</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a href="#services" class="menu-link" data-key="nav_services">خدماتنا</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a href="#structure" class="menu-link" data-key="nav_structure">هيكلنا الاداري</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a href="#partners" class="menu-link" data-key="nav_partners">شركاء النجاح</a>
+      </li>
+      <li style="margin-bottom: 16px;">
+        <a  href="#ceo" class="menu-link" data-key="nav_ceo">رسالة الرئيس</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div style="margin-top:40px; border-top:1px dashed rgba(255,255,255,0.2); padding-top:16px;">
+    <h4 style="margin-bottom:12px;" data-key="sidebar_contact">تواصل سريع</h4>
+    <a href="tel:+966550602128" style="color:#fff; display:block; margin-bottom:6px;" data-key="sidebar_phone">📞 اتصال مباشر</a>
+    <a href="mailto:info@alammarlaw.com" style="color:#fff; display:block;" data-key="sidebar_email">✉ البريد الإلكتروني</a>
+  </div>
+</aside>
+
+<style>
+  .menu-link {
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .menu-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #c9a04b, #b5862f);
+    transition: width 0.3s ease;
+  }
+  .menu-link:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateX(-6px);
+  }
+  .menu-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  #menuToggle:hover {
+    transform: scale(1.08);
+    background: linear-gradient(90deg, #b5862f, #c9a04b);
+  }
+</style>
+
+ <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand" aria-label="brand">
+          <div class="logo" aria-hidden="true">
+            <a href="index.html" aria-label="home">
+              <img src="a4.png" alt="شعار الشركة" style="width:40px;height:40px;object-fit:contain;">
+            </a>
+          </div>
+          <div>
+            <h1 data-key="company_name">شركة عبدالاله العمار و شركاؤه</h1>
+            <div style="font-size:12px;opacity:0.9;" data-key="company_tag">للمحاماة و الاستشارات القانونية</div>
+          </div>
+        </div>
+        <div class="header-actions">
+        <button id="langToggle" class="lang-switch">EN</button>
+        <button id="menuToggle" style="background: transparent; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 0 8px;">☰</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+          
+
+       
+
+
+
+<!-- Hero Section -->
+<section id="home" class="hero" style="
+  position: relative;
+  background: url('d1.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  overflow: hidden;
+  min-height: 100vh;
+">
+ <!-- طبقة تغبيش خفيفة فوق الصورة -->
+<div class="hero-overlay"></div>
+
+
+  <div class="container" style="max-width:1000px;margin:auto;position:relative;z-index:2;">
+    <h3 class="hero-title" data-key="hero_title">
+  شركة قانونية متكاملة تتمتع بفريق عمل ذو كفاءة وخبرة عالية تقدم الخدمات للشركات و الأفراد
+</h3>
+
+<style>
+.hero-title {
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  font-size: clamp(22px, 5vw, 40px); /* حجم يتغير حسب الشاشة */
+}
+</style>
+
+
+    <h4 class="hero-subtitle" data-key="hero_subtitle">
+  ابدأ رحلتك القانونية معنا باختيار أحد الخيارات التالية
+</h4>
+
+<style>
+.hero-subtitle {
+  color: #c8a54c;
+  margin-bottom: 60px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.5;
+  font-size: clamp(16px, 4vw, 27px); /* حجم متغير حسب الشاشة */
+}
+</style>
+
+ <!-- البوكسات -->
+<div class="services-wrapper">
+  <div class="services-grid">
+    <div class="service-box" data-key="hero_box1">التمثيل والتقاضي</div>
+    <div class="service-box" data-key="hero_box2">المذكرات واللوائح</div>
+    <div class="service-box" data-key="hero_box3">العقود والاتفاقيات</div>
+  </div>
+</div>
+
+<!-- النافذة المنبثقة -->
+<div id="popupForm" class="popup-overlay">
+  <div class="popup-content">
+    <button class="close-btn" title="إغلاق">&times;</button>
+    <h3 data-key="form_title">طلب الخدمة</h3>
+    <form id="serviceForm">
+      <input type="text" name="name" placeholder="الاسم الكامل" required>
+      <input type="hidden" id="serviceNameInput" name="service" value="">
+      <input type="tel" name="phone" placeholder="رقم الجوال" required>
+      <select name="type" required>
+        <option value="">شركة / أفراد</option>
+        <option value="شركة">شركة</option>
+        <option value="أفراد">أفراد</option>
+      </select>
+      <textarea name="message" placeholder="رسالتك" rows="3" required></textarea>
+      <button type="submit" class="btn-send">إرسال الطلب</button>
+    </form>
+  </div>
+</div>
+
+<!-- رسالة الشكر -->
+<div id="thankYou" class="thankyou-popup">
+  <div class="thankyou-box">
+    <h3>شكرًا لكم</h3>
+    <p>تم استلام طلبكم بنجاح.</p>
+  </div>
+</div>
+
+<style>
+.services-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0; /* ← كانت 60px، قللنا المسافة لتظهر أعلى */
+  margin-top: -30px; /* ← ترفع المجموعة للأعلى */
+}
+
+
+/* الشبكة الأساسية */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 950px;
+  width: 90%;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* البوكسات */
+.service-box {
+  background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 3px 20px rgba(0,0,0,0.18);
+  position: relative;
+  overflow: hidden;
+  min-width: 120px; /* أصغر قليلاً للجوال */
+  max-width: 200px;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* حركة التأثير عند المرور */
+.service-box::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform: skewX(-20deg);
+  transition: 0.6s;
+}
+.service-box:hover::before {
+  left: 125%;
+}
+.service-box:hover {
+  background: linear-gradient(145deg, var(--gold), #b78e35);
+  color: var(--navy);
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* ======= الترتيب للجوال ======= */
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* ← بوكس واحد تحت الثاني */
+    gap: 15px;
+  }
+
+  .service-box {
+    min-width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    padding: 18px;
+  }
+}
+
+
+/* لو حبيت أصغر الأجهزة جداً */
+@media (max-width: 375px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* عمود واحد فقط */
+  }
+}
+
+
+/* النافذة المنبثقة */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--blur-bg);
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content {
+  background: var(--white-glass);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 24px;
+  padding: 45px 35px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+  color: #fff;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+.popup-content h3 {
+  color: var(--gold);
+  margin-bottom: 25px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.popup-content input,
+.popup-content select,
+.popup-content textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--navy);
+  font-size: 15px;
+  font-family: var(--font);
+}
+
+.popup-content textarea {
+  resize: none;
+}
+
+.btn-send {
+  background: linear-gradient(135deg, var(--gold), #e7cb6f);
+  color: var(--navy);
+  border: none;
+  padding: 13px 60px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-send:hover {
+  background: linear-gradient(135deg, #f4dc86, #fff1b2);
+  transform: translateY(-2px);
+}
+
+/* زر الإغلاق */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: rgba(255,255,255,0.12);
+  color: var(--gold);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.close-btn:hover {
+  background: var(--gold);
+  color: var(--navy);
+  transform: rotate(90deg);
+}
+
+/* رسالة الشكر */
+.thankyou-popup {
+  position: fixed;
+  inset: 0;
+  background: var(--blur-bg);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  animation: fadeIn 0.3s ease;
+}
+.thankyou-box {
+  background: var(--white-glass);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 45px 70px;
+  border-radius: 24px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  animation: glowUp 0.5s ease;
+}
+.thankyou-box h3 {
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+
+/* حركات */
+@keyframes glowUp {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+</style>
+
+<script>
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbxhMCVS9kgMQevns3cxpMXsv-_e4Radz99JSYx1hVjdR_67BUdjYn6nVMWH-ta74-dCOg/exec"; // ← الصق الرابط الجديد هنا
+
+document.querySelectorAll('.service-box').forEach(box => {
+  box.addEventListener('click', () => {
+    const serviceName = box.textContent || box.innerText;
+    document.getElementById('serviceNameInput').value = serviceName.trim();
+    document.getElementById('popupForm').style.display = 'flex';
+  });
+});
+
+document.querySelector('.close-btn').addEventListener('click', () => {
+  document.getElementById('popupForm').style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === document.getElementById('popupForm')) {
+    document.getElementById('popupForm').style.display = 'none';
+  }
+});
+
+document.getElementById('serviceForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const form = e.target;
+  const submitButton = form.querySelector('.btn-send');
+  const originalButtonText = submitButton.textContent;
+  submitButton.textContent = 'جاري الإرسال...';
+  submitButton.disabled = true;
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+      document.getElementById('popupForm').style.display = 'none';
+      document.getElementById('thankYou').style.display = 'flex';
+      setTimeout(() => { document.getElementById('thankYou').style.display = 'none'; }, 2500);
+      form.reset();
+    })
+    .catch(error => alert('حدث خطأ أثناء الإرسال. الرجاء المحاولة مرة أخرى.'))
+    .finally(() => {
+      submitButton.textContent = originalButtonText;
+      submitButton.disabled = false;
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+ 
+  <!-- زر احجز استشارة -->
+<a href="https://wa.me/966550602128" target="_blank" class="btn-elite" data-key="hero_button">
+  انقر للتواصل مباشرة أو الحصول على استشارة
+</a>
+
+</section>
+
+<!-- تنسيق الزر -->
+<style>
+.btn-elite {
+  position: relative;
+  display: inline-block;
+  padding: 16px 120px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Tajawal', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(135deg, #000000b2, #000000b2);
+  border-radius: 60px;
+  border: 1px solid #d9b55a00;
+  letter-spacing: 1px;
+  text-decoration: none;
+  box-shadow: 0 0 30px rgba(200, 165, 76, 0);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+   margin-top: 38px; /* ← ترفع المجموعة للأعلى */
+}
+
+/* تأثير الانعكاس السريع */
+.btn-elite::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skewX(-25deg);
+  animation: eliteLight 3s infinite;
+  opacity: 0.9;
+}
+
+/* تأثير الحواف المضيئة الفاخرة */
+.btn-elite::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  border: 2px solid rgba(255, 220, 140, 0);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0), inset 0 0 20px rgba(255, 255, 255, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* عند المرور بالماوس */
+.btn-elite:hover {
+  transform: scale(1.08) rotateX(3deg) rotateY(2deg);
+  box-shadow: 0 0 60px rgba(200,165,76,0.5), 0 10px 20px rgba(0,0,0,0.1);
+  background: linear-gradient(135deg, #e0c16c, #f9e9b3);
+}
+
+/* حركة الضوء */
+@keyframes eliteLight {
+  0% { left: -80%; opacity: 0; }
+  50% { left: 120%; opacity: 1; }
+  100% { left: 120%; opacity: 0; }
+}
+
+/* تجاوب الشاشات */
+@media (max-width:768px) {
+  .btn-elite {
+    padding: 12px 60px;
+    font-size: 16px;
+  }
+}
+</style>
+
+
+
+
+<style>
+.stat-card {
+  text-align: center;
+  color: #0b2b44;
+  padding: 10px;
+}
+
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #0b2b44;
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icon-circle.gold {
+  background: var(--gold, #c7a74f);
+  color: #fff;
+}
+
+.icon-circle.gray {
+  background: #ccc;
+  color: #fff;
+}
+
+.stat-card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #0b2b44;
+}
+
+.stat-card p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .icon-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 22px;
+  }
+}
+</style>
+
+<!-- Stats Section -->
+<section class="stats-white" style="margin-top: 74px;">
+  
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3 data-key="stats_cases_done">القضايا و الخدمات المنجزة</h3>
+      <div class="stat-number" id="completed-cases-count">0</div>
+    </div>
+    <div class="stat-card">
+      <h3 data-key="stats_cases_ongoing">القضايا و الخدمات القائمة</h3>
+      
+      <div class="stat-number1" id="ongoing-cases-count">0</div>
+    </div>
+    <div class="stat-card">
+      <h3 data-key="stats_satisfaction">مؤشر رضا العملاء</h3>
+      <div>
+        <div class="circle-wrap"><canvas id="ach3"></canvas><div class="circle-text" id="satisfaction-text" style="color: #28a745;">92%</div></div>
+        <div class="circle-label" data-key="stats_achieved">التحقيق</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <h3 data-key="stats_clients">عدد العملاء</h3>
+      
+      <div class="stat-number1" id="clients-count">0</div>
+    </div>
+    <div class="stat-card">
+      
+      <h3 data-key="stats_success_title">نجاح القضايا</h3>
+      <div>
+        <div class="circle-wrap"><canvas id="successRate"></canvas><div class="circle-text" id="success-text" style="color: #28a745;">96%</div></div>
+        <div class="circle-label" data-key="stats_success_rate">نسبة النجاح</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <h3 data-key="stats_consultations">الاستشارات القانونية</h3>
+      <div class="stat-number1" id="consultations-count">0</div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+  
+
+  <!-- Why Us -->
+  <section id="why">
+    <div class="container">
+      <div class="section-title"><h3 data-key="why_us_title">لماذا نحن</h3></div>
+      <div class="why-grid">
+        <div class="why-item card">
+          <div class="ico">⚖️</div>
+          <h4 data-key="why_us_card1_title">خبرة</h4>
+          <p class="muted" data-key="why_us_card1_text">سنوات من الخبرة مع نتائج مثبتة.</p>
+        </div>
+        <div class="why-item card">
+          <div class="ico">🏆</div>
+          <h4 data-key="why_us_card2_title">نتائج</h4>
+          <p class="muted" data-key="why_us_card2_text">سجل قوي في القضايا المعقدة.</p>
+        </div>
+        <div class="why-item card">
+          <div class="ico">🤝</div>
+          <h4 data-key="why_us_card3_title">التزام</h4>
+          <p class="muted" data-key="why_us_card3_text">شراكة حقيقية مع العميل لنهاية القضية.</p>
+        </div>
+        <div class="why-item card">
+          <div class="ico">🔒</div>
+          <h4 data-key="why_us_card4_title">سرية</h4>
+          <p class="muted" data-key="why_us_card4_text">حماية معلومات الموكلين أولوية قصوى.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+
+
+
+<!-- قيمنا -->
+<section id="values" style="background: var(--navy-2); color: #fff; padding: 100px 0; position: relative; overflow: hidden;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+              background: radial-gradient(circle at 20% 30%, rgba(212,182,58,0.1), transparent 70%);
+              opacity: 0.8;"></div>
+
+  <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+    <div class="section-title" style="margin-bottom: 80px;">
+       <h2 style="color:var(--gold);font-size:36px;" data-key="values_title">قيمنا</h2>
+      <div style="width: 80px; height: 4px; background: var(--gold); margin: 0 auto 20px; border-radius: 2px;"></div>
+      
+    </div>
+
+    <div class="values-grid" style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      align-items: stretch;
+    ">
+      <!-- الكفاءة -->
+      <div class="value-card" style="
+        background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 22px;
+        padding: 50px 30px;
+        transition: all 0.5s ease;
+        backdrop-filter: blur(6px);">
+        <style>
+          .value-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 0 40px rgba(212,182,58,0.25); }
+        </style>
+        <div style="font-size: 45px; color: var(--gold); margin-bottom: 20px;">⚖️</div>
+        <h4 style="color: var(--gold); font-size: 22px; margin-bottom: 12px;" data-key="values_card1_title">الكفاءة</h4>
+        <p style="color: #dcdcdc; font-size: 15.5px; line-height: 1.8;" data-key="values_card1_text">خبرة تتجاوز 10 سنوات صنعت من فريقنا كفاءة عالية في التعامل مع أدق القضايا.</p>
+      </div>
+
+      <!-- الشفافية -->
+      <div class="value-card" style="
+        background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 22px;
+        padding: 50px 30px;
+        transition: all 0.5s ease;
+        backdrop-filter: blur(6px);">
+        <div style="font-size: 45px; color: var(--gold); margin-bottom: 20px;">💡</div>
+        <h4 style="color: var(--gold); font-size: 22px; margin-bottom: 12px;" data-key="values_card2_title">الشفافية</h4>
+        <p style="color: #dcdcdc; font-size: 15.5px; line-height: 1.8;" data-key="values_card2_text">الوضوح والمصداقية في كل خطوة أساس علاقتنا مع عملائنا.</p>
+      </div>
+
+      <!-- السرية -->
+      <div class="value-card" style="
+        background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 22px;
+        padding: 50px 30px;
+        transition: all 0.5s ease;
+        backdrop-filter: blur(6px);">
+        <div style="font-size: 45px; color: var(--gold); margin-bottom: 20px;">🔒</div>
+        <h4 style="color: var(--gold); font-size: 22px; margin-bottom: 12px;" data-key="values_card3_title">السرية</h4>
+        <p style="color: #dcdcdc; font-size: 15.5px; line-height: 1.8;" data-key="values_card3_text">الالتزام التام بسرية المعلومات وضمان حماية بيانات العملاء.</p>
+      </div>
+
+      <!-- الاحترافية -->
+      <div class="value-card" style="
+        background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 22px;
+        padding: 50px 30px;
+        transition: all 0.5s ease;
+        backdrop-filter: blur(6px);">
+        <div style="font-size: 45px; color: var(--gold); margin-bottom: 20px;">🏛️</div>
+        <h4 style="color: var(--gold); font-size: 22px; margin-bottom: 12px;" data-key="values_card4_title">الاحترافية</h4>
+        <p style="color: #dcdcdc; font-size: 15.5px; line-height: 1.8;" data-key="values_card4_text">نهج عمل منظم ودقيق يضمن أعلى معايير الجودة في الخدمة القانونية.</p>
+      </div>
+    </div>
+    <style>
+      /* قيمنا — نسخة الجوال */
+@media (max-width: 576px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr); /* بوكسين جنب بعض */
+    gap: 18px; /* المسافة بين البوكسات */
+  }
+
+  .value-card {
+    padding: 30px 20px !important; /* تقليل البادينج قليلاً */
+    border-radius: 18px; /* زوايا أكثر نعومة */
+    text-align: center;
+    background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .value-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 35px rgba(212,182,58,0.25);
+  }
+
+  .value-card div:first-child { /* الأيقونة */
+    font-size: 38px !important; /* أصغر شوي لتناسب الجوال */
+    margin-bottom: 15px;
+  }
+
+  .value-card h4 {
+    font-size: 17px !important;
+    margin-bottom: 8px;
+    color: var(--gold);
+  }
+
+  .value-card p {
+    font-size: 14px !important;
+    line-height: 1.6;
+    color: #e0e0e0;
+  }
+}
+
+    </style>
+  </div>
+  </section>
+
+  <!-- خدماتنا -->
+  <section id="services" style="background: var(--navy-2); color: #fff; padding:80px 0; position: relative; z-index: 5;">
+    <div class="container" style="max-width:1200px;margin:auto;">
+      <div class="section-title" style="text-align:center;margin-bottom:50px;">
+        <h2 style="color:var(--gold);font-size:36px;" data-key="services_title">خدماتنا</h2>
+        <div style="width:80px;height:4px;background:var(--gold);margin:12px auto;border-radius:2px;" ></div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:30px;justify-content:center;">
+        <div class="card" style="flex:1 1 300px;max-width:380px;text-align:center;
+          background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
+          border:1px solid rgba(255,255,255,0.1);
+          border-radius:20px;
+          padding:40px 25px; transition:all 0.4s ease; backdrop-filter:blur(6px);"
+        >
+          <img src="https://img.icons8.com/color/96/000000/money.png" alt="" style="margin:0 auto 18px;">
+          <h4 style="color:var(--gold);margin-bottom:10px;" data-key="svc_card1_title">الخدمات القانونية المتعلقة بالماليات</h4>
+          <p style="color:#ccc;margin-bottom:15px;" data-key="svc_card1_text">الاستشارات المالية القانونية</p>
+         <a href="s1.html" 
+   class="modern-btn" 
+   data-key="details"
+   style="font-weight:bold;">
+   التفاصيل
+</a>
+
+<style>
+.modern-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-family: inherit;
+  background: linear-gradient(135deg, #0b2b44, #113a5c);
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: .25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.35);
+}
+
+.modern-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.15);
+  transition: 0.3s ease;
+}
+
+.modern-btn:hover::after {
+  left: 0;
+}
+</style>
+
+<style>
+  .card.service-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 0 30px rgba(212,182,58,0.25); }
+</style>
+
+        </div>
+
+        <div class="card service-card" style="flex:1 1 300px;max-width:380px;text-align:center;
+          background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
+          border:1px solid rgba(255,255,255,0.1);
+          border-radius:20px; padding:40px 25px; transition:all 0.4s ease; backdrop-filter:blur(6px);">
+          <img src="https://img.icons8.com/color/96/000000/business.png" alt="" style="margin:0 auto 18px;">
+          <h4 style="color:var(--gold);margin-bottom:10px;" data-key="svc_card2_title">الخدمات القانونية المتعلقة بإدارة الشركات</h4>
+          <p style="color:#ccc;margin-bottom:15px;" data-key="svc_card2_text">الخدمات القانونية للشركات</p>
+          <a href="s2.html" 
+   class="modern-btn" 
+   data-key="details"
+   style="font-weight:bold;">
+   التفاصيل
+</a>
+
+<style>
+.modern-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-family: inherit;
+  background: linear-gradient(135deg, #0b2b44, #113a5c);
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: .25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.35);
+}
+
+.modern-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.15);
+  transition: 0.3s ease;
+}
+
+.modern-btn:hover::after {
+  left: 0;
+}
+</style>
+
+        </div>
+
+        <div class="card service-card" style="flex:1 1 300px;max-width:380px;text-align:center;
+          background:linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
+          border:1px solid rgba(255,255,255,0.1);
+          border-radius:20px; padding:40px 25px; transition:all 0.4s ease; backdrop-filter:blur(6px);">
+          <img src="https://img.icons8.com/color/96/000000/contract.png" alt="" style="margin:0 auto 18px;">
+          <h4 style="color:var(--gold);margin-bottom:10px;" data-key="svc_card3_title">الخدمات القانونية المتعلقة بالاستشارات والعقود</h4>
+          <p style="color:#ccc;margin-bottom:15px;" data-key="svc_card3_text">العقود والاستشارات القانونية</p>
+          <a href="s3.html" 
+   class="modern-btn" 
+   data-key="details"
+   style="font-weight:bold;">
+   التفاصيل
+</a>
+
+<style>
+.modern-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-family: inherit;
+  background: linear-gradient(135deg, #0b2b44, #113a5c);
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: .25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.35);
+}
+
+.modern-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.15);
+  transition: 0.3s ease;
+}
+
+.modern-btn:hover::after {
+  left: 0;
+}
+</style>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- قسم الهيكل التنظيمي -->
+<section id="structure" style="background:#f7f8fa;padding:80px 0;text-align:center;">
+  <div class="container" style="max-width:1400px;margin:auto;padding:0 20px;">
+    <h2 style="color:#b5862f;margin-bottom:40px;font-size:28px;" data-key="structure_title">هيكلنا الإداري</h2>
+
+    <div class="org-image-wrapper">
+      <img src="a5.png" alt="الهيكل التنظيمي" class="org-image">
+    </div>
+  </div>
+</section>
+
+<style>
+.org-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.org-image {
+  width: 100%;
+  max-width: 1300px;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.3s ease-in-out;
+}
+
+/* تحسين التوافق مع الجوال */
+@media (max-width: 992px) {
+  .org-image {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .org-image {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+</style>
+
+
+
+
+<!-- قسم شركاء النجاح -->
+<section id="partners" style="background:#fff;padding:80px 0;text-align:center;">
+  <div class="container" style="max-width:1300px;margin:auto;padding:0 20px;">
+    <h2 style="color:#b5862f;margin-bottom:50px;font-size:28px;" data-key="partners_title">شركاء النجاح</h2>
+
+    <div class="partners-grid">
+      <div class="partner"><img src="images/s1.jpeg" alt="شريك 1"></div>
+      <div class="partner"><img src="images/s2.jpeg" alt="شريك 2"></div>
+      <div class="partner"><img src="images/s3.jpeg" alt="شريك 3"></div>
+      <div class="partner"><img src="images/s4.jpeg" alt="شريك 4"></div>
+      <div class="partner"><img src="images/s5.jpeg" alt="شريك 5"></div>
+      <div class="partner"><img src="images/s6.jpeg" alt="شريك 6"></div>
+      <div class="partner"><img src="images/s7.jpeg" alt="شريك 7"></div>
+      <div class="partner"><img src="images/s8.jpeg" alt="شريك 8"></div>
+      <div class="partner"><img src="images/s9.jpeg" alt="شريك 9"></div>
+      <div class="partner"><img src="images/s10.jpeg" alt="شريك 10"></div>
+      <div class="partner"><img src="images/s11.png" alt="شريك 11"></div>
+      <div class="partner"><img src="images/s12.jpeg" alt="شريك 12"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.partner:hover {
+  transform: scale(1.05);
+  border-color: var(--gold, #c7a74f);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.partner img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 90px;
+  filter: grayscale(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.partner:hover img {
+  filter: grayscale(0);
+  transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .partner {
+    padding: 16px;
+  }
+}
+</style>
+
+
+
+
+  <!-- CEO Message -->
+  <section id="ceo">
+    <div class="container">
+      <div class="ceo">
+        <img src="a3.jpg" alt="الرئيس التنفيذي">
+        <div>
+          <h3 style="margin:0 0 8px" data-key="ceo_title">رسالة الرئيس التنفيذي</h3>
+          <p class="muted" style="margin:0 0 12px; color:#c9a04b;" data-key="ceo_text">منذ تحولها إلى شركة محترفة تعطى شركة عبد الإله العمار للمحاماة والاستشارات القانونية الأولوية للدقة العلمية والتميز الإداري، وقد ساهم القسم القانوني المتخصص، الذي يضم فريقا من المحامين ذوي الخبرة في التعامل مع أكثر من 600 قصية، في النمو المستمر. لقد شكل الاختيار الدقيق للموظفين فريقا يتمتع بخبرات تراكمية في مختلف التخصصات القانونية، مما ينعكس في الإحصائيات المتزايدة يوميا للمهام المنجزة والإنجازات وفقا للمعايير</p>
+          <div style="font-weight:700;opacity:0.95" data-key="ceo_name">عبدالاله العمار</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h4 style="margin:0 0 8px;color:var(--gold)" data-key="footer_title1">مكتب المحاماة</h4>
+        <p class="muted" style="color:#ffffff;" data-key="footer_address">العنوان: الرياض - طريق الملك سلمان - برج الرميح<br>هاتف: 2128 060 55 966+<br>البريد:  info@alammarlaw.com</p>
+      </div>
+      <div>
+  <h4 style="margin:0 0 8px;color:var(--gold)" data-key="footer_title2">روابط سريعة</h4>
+  <ul style="padding:0;margin:0;list-style:none;display:flex;gap:10px;align-items:center;">
+    <li>
+      <a href="https://x.com/alammar_law1" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);">
+        <!-- شعار X -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16" fill="currentColor">
+          <path d="M389.2 48H473L305.1 232.2L503 464H372.6L257.7 324.2L126.9 464H43.8L221.1 267.5L27 48H161.5L264.3 175.3L389.2 48Z"/>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.snapchat.com/add/alammar_law" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);">
+        <!-- شعار Snapchat -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
+          <path d="M224 0C100.3 0 0 100.3 0 224c0 92.6 59.6 171.5 142.1 202.3-2.1-18.8-4.8-46.8 1.2-67.1 5.3-18.7 34.1-118.3 34.1-118.3s-8.7-17.4-8.7-43.1c0-40.4 23.4-70.6 52.5-70.6 24.8 0 36.7 18.6 36.7 40.9 0 25-15.9 62.2-24.1 96.9-6.8 28.9 14.4 52.5 42.6 52.5 51.1 0 85.4-54.1 85.4-132.1 0-68.9-49.4-117.4-120.1-117.4-81.9 0-129.9 61.5-129.9 125.2 0 24.7 9.5 51.1 21.4 65.6 2.4 2.9 2.7 5.5 2 8.4-2.2 9.2-7.2 29.4-8.1 33.6-1.2 5.2-4.1 6.3-9.5 3.8-35.5-16.5-57.8-68.3-57.8-110.2 0-89.5 65.1-171.8 188.1-171.8 99.3 0 176.3 70.9 176.3 165.9 0 98.6-62.3 178.2-148.7 178.2-29 0-56.3-15.1-65.6-32.7l-17.8 67.9c-6.5 24.6-24.2 55.4-36.1 74 27.1 8.4 55.8 13 85.6 13 123.7 0 224-100.3 224-224S347.7 0 224 0z"/>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.tiktok.com/@alammar_law" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);">
+        <!-- شعار TikTok -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
+          <path d="M448 209.9a210.1 210.1 0 0 1-122.3-39.4v141.2a200.1 200.1 0 1 1-200-200.1 195.2 195.2 0 0 1 29.2 2.2v82.3a118.6 118.6 0 1 0 83.3 113.5V0h81.3a129.6 129.6 0 0 0 128.5 129.7Z"/>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/@alammar-law" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);">
+        <!-- شعار YouTube -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="16" height="16" fill="currentColor">
+          <path d="M549.7 124.1c-6.3-23.7-24.8-42.4-48.4-48.7C458.8 64 288 64 288 64s-170.8 0-213.3 11.4c-23.6 6.3-42.1 25-48.4 48.7C16 166.6 16 256 16 256s0 89.4 10.3 131.9c6.3 23.7 24.8 42.4 48.4 48.7C117.2 448 288 448 288 448s170.8 0 213.3-11.4c23.6-6.3 42.1-25 48.4-48.7C560 345.4 560 256 560 256s0-89.4-10.3-131.9zM232 336V176l142 80-142 80z"/>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/966550602128" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20.5 3.5H3.5v17l4-1 1.5.5L20.5 3.5z" fill="currentColor"/></svg>
+    <span data-key="whatsapp_cta">تواصل عبر واتساب</span>
+  </a>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const langToggle = document.getElementById('langToggle');
+    let currentLang = 'ar'; // Default language
+
+    const translations = {
+      en: {
+        company_name: "Abdullah Al Ammar & Partners",
+        company_tag: "Law Firm & Legal Consultations",
+        nav_home: "Home",
+        nav_values: "Our Values",
+        nav_services: "Our Services",
+        nav_structure: "Our Structure",
+        nav_partners: "Success Partners",
+        nav_ceo: "CEO's Message",
+        hero_title: "An integrated law firm with a highly competent and experienced team, providing services to companies and individuals.",
+        hero_subtitle: "Start your legal journey with us by choosing one of the following options",
+        hero_box1: "Representation & Litigation",
+        hero_box2: "Memos & Regulations",
+        hero_box3: "Contracts & Agreements",
+        form_title: "Service Request",
+        hero_button: "Click to communicate directly or get a consultation",
+        stats_cases_done: "Completed Cases & Services",
+        stats_cases_ongoing: "Ongoing Cases & Services",
+        stats_satisfaction: "Customer Satisfaction Index",
+        stats_target: "Target",
+        stats_achieved: "Achieved",
+        stats_clients: "Number of Clients",
+        stats_success_title: "Case Success",
+        stats_success_rate: "Success Rate",
+        stats_consultations: "Legal Consultations",
+        why_us_title: "Why Us",
+        why_us_card1_title: "Experience",
+        why_us_card1_text: "Years of experience with proven results.",
+        why_us_card2_title: "Results",
+        why_us_card2_text: "Strong track record in complex cases.",
+        why_us_card3_title: "Commitment",
+        why_us_card3_text: "A true partnership with the client until the end of the case.",
+        why_us_card4_title: "Confidentiality",
+        why_us_card4_text: "Protecting client information is a top priority.",
+        values_title: "Our Values",
+        values_card1_title: "Efficiency",
+        values_card1_text: "Over 10 years of experience have made our team highly efficient in handling the most delicate cases.",
+        values_card2_title: "Transparency",
+        values_card2_text: "Clarity and credibility in every step are the foundation of our relationship with our clients.",
+        values_card3_title: "Confidentiality",
+        values_card3_text: "Full commitment to the confidentiality of information and ensuring the protection of client data.",
+        values_card4_title: "Professionalism",
+        values_card4_text: "An organized and precise work approach that ensures the highest quality standards in legal service.",
+        services_title: "Our Services",
+        svc_card1_title: "Financial Legal Services",
+        svc_card1_text: "Legal financial consulting.",
+        svc_card2_title: "Corporate Management Legal Services",
+        svc_card2_text: "Legal services for companies.",
+        svc_card3_title: "Consulting and Contracts Legal Services",
+        svc_card3_text: "Contracts and legal advice.",
+        details: "Details",
+        structure_title: "Our Administrative Structure",
+        partners_title: "Success Partners",
+        ceo_title: "CEO's Message",
+        ceo_text: "Since its transformation into a professional company, Abdullah Al Ammar Law Firm has prioritized scientific accuracy and administrative excellence. The specialized legal department, comprising a team of experienced lawyers who have handled over 600 cases, has contributed to continuous growth. The careful selection of employees has formed a team with cumulative experience in various legal specialties, which is reflected in the daily increasing statistics of completed tasks and achievements according to standards.",
+        ceo_name: "Abdullah Al Ammar",
+        footer_title1: "Law Office",
+        footer_address: "Address: Riyadh - King Salman Road - Al-Rumaih Tower<br>Phone: +966 55 060 2128<br>Email: info@alammarlaw.com",
+        footer_title2: "Quick Links",
+        whatsapp_cta: "Contact via WhatsApp",
+      }
+    };
+
+    // Store original Arabic text
+    const originalTexts = {};
+    document.querySelectorAll('[data-key]').forEach(el => {
+        originalTexts[el.getAttribute('data-key')] = el.innerHTML;
+    });
+
+    function applyTranslations(lang) {
+        currentLang = lang;
+        if (lang === 'en') {
+            document.documentElement.lang = 'en';
+            document.documentElement.dir = 'ltr';
+            langToggle.textContent = 'AR';
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations.en[key]) {
+                    el.innerHTML = translations.en[key];
+                }
+            });
+        } else { // 'ar'
+            document.documentElement.lang = 'ar';
+            document.documentElement.dir = 'rtl';
+            langToggle.textContent = 'EN';
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (originalTexts[key]) {
+                    el.innerHTML = originalTexts[key];
+                }
+            });
+        }
+    }
+
+    langToggle.addEventListener('click', () => {
+        const newLang = currentLang === 'ar' ? 'en' : 'ar';
+        applyTranslations(newLang);
+    });
+
+    // Simple appear animation on scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.transform='translateY(0)';
+          entry.target.style.opacity='1';
+          observer.unobserve(entry.target);
+        }
+      })
+    },{threshold:0.12});
+
+    document.querySelectorAll('.card, .ceo, .vision, .why-item, .value').forEach(el=>{
+      el.style.transform='translateY(14px)';el.style.opacity='0';el.style.transition='all .6s cubic-bezier(.2,.9,.2,1)';
+      observer.observe(el);
+    });
+});
+
+
+// Draw Circles
+let charts = {};
+function drawCircle(id,value,color){
+  const ctx = document.getElementById(id);
+  if(charts[id]) charts[id].destroy();
+  charts[id] = new Chart(ctx,{
+    type:'doughnut',
+    data:{datasets:[{data:[value,100-value],backgroundColor:[color,'#ededed'],borderWidth:0}]},
+    options:{cutout:'75%',animation:{duration:1300},responsive:true,plugins:{legend:{display:false},tooltip:{enabled:false}}}
+  });
+}
+
+// Counter-up animation
+function animateCountUp(el, target, prefix = '', duration = 1500) { // duration 1.5s for faster
+  let start = null;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    el.textContent = prefix + Math.floor(progress * target);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      el.textContent = prefix + target; // Ensure it ends on the exact number
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+// Fetch Statistics from Google Sheet
+const statsScriptURL = 'https://script.google.com/macros/s/AKfycbx5FVI6RhdxZIPcSxCgr7q16P56VJwdfiuR4jCXwwKFH4v1bZShvtub3Cay3xdN6uZC/exec'; 
+
+if(statsScriptURL && statsScriptURL.startsWith('http')) {
+  fetch(statsScriptURL)
+    .then(response => response.json())
+    .then(data => {
+      // تحديث الأرقام النصية
+      if(data.completed) animateCountUp(document.getElementById('completed-cases-count'), parseInt(data.completed));
+      if(data.ongoing) animateCountUp(document.getElementById('ongoing-cases-count'), parseInt(data.ongoing));
+      if(data.clients) animateCountUp(document.getElementById('clients-count'), parseInt(data.clients), '+');
+      if(data.consultations) animateCountUp(document.getElementById('consultations-count'), parseInt(data.consultations), '+');
+
+      // تحديث الدوائر والنسب
+      if(data.satisfaction) {
+        document.getElementById('satisfaction-text').textContent = data.satisfaction + '%';
+        drawCircle('ach3', data.satisfaction, '#28a745');
+      }
+      if(data.success) {
+        document.getElementById('success-text').textContent = data.success + '%';
+        drawCircle('successRate', data.success, '#28a745');
+      }
+    })
+    .catch(error => console.error('Error fetching stats:', error));
+}
+
+// Sidebar Logic
+const sidebar = document.getElementById('sidebar');
+const openBtn = document.getElementById('menuToggle');
+const closeBtn = document.getElementById('closeSidebar');
+
+openBtn.addEventListener('click', () => { sidebar.style.right = '0'; });
+closeBtn.addEventListener('click', () => { sidebar.style.right = '-100%'; });
+
+document.querySelectorAll('a.menu-link').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      sidebar.style.right = '-100%';
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // For external links
+      sidebar.style.right = '-100%';
+    }
+  });
+});
+</script>
+  
+</body>
+</html>
+</html>
